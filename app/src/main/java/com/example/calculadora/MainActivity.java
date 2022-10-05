@@ -5,86 +5,66 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private Button suma;
+    /*private Button suma;
     private Button division;
     private Button resta;
-    private Button multiplicacion;
-    private TextView text_respuesta;
-    private int edit_numero_uno;
-    private int edit_numero_dos;
+    private Button multiplicacion;*/
+    private TextView textoResultado;
+    private EditText numeroUno;
+    private EditText numeroDos;
+    private int resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        text_respuesta = findViewById(R.id.resultado);//Variable que guarda los resultados
-        edit_numero_uno = findViewById(R.id.numero1);//Variable que guarda el numero 1 PONERLO
-        edit_numero_dos = findViewById(R.id.numero2);//Variable que guarda el numero 2  PONERLO
 
-
-
-        suma = findViewById(R.id.);//Poner el ID DE LA SUMA
-        suma.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                text_respuesta.setText( suma( Integer.parseInt(String.valueOf(edit_numero_uno)),Integer.parseInt(String.valueOf(edit_numero_dos)) )+"");
-            }
-        });
-
-
-        division = findViewById(R.id.);//ID DE DIVISION
-        division.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                text_respuesta.setText( division( Integer.parseInt(String.valueOf(edit_numero_uno)),Integer.parseInt(String.valueOf(edit_numero_dos)) )+"");
-
-            }
-        });
-
-        multiplicacion = findViewById(R.id.multiplicacion);
-        multiplicacion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                text_respuesta.setText( multiplicacion(Integer.parseInt(String.valueOf(edit_numero_uno)),Integer.parseInt(String.valueOf(edit_numero_dos)) )+"");
-
-            }
-        });
-
-        resta = findViewById(R.id.resta);
-        resta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                text_respuesta.setText( resta( Integer.parseInt(String.valueOf(edit_numero_uno)),Integer.parseInt(String.valueOf(edit_numero_dos)) )+"");
-
-            }
-        });
+        numeroUno = findViewById(R.id.operando1);//Variable que guarda el numero 1
+        numeroDos = findViewById(R.id.operando2);//Variable que guarda el numero 2
 
     }
 
 
-    public double suma (int a, int b){
-        return a+b;
+    public void suma (View v){
+        int num1 = Integer.parseInt(numeroUno.getText().toString());
+        int num2 = Integer.parseInt(numeroDos.getText().toString());
+        resultado = num1+num2;
+        mostrar();
     }
 
-    public double resta (int a, int b){
-        return a-b;
+    private void mostrar() {
+
+        textoResultado = findViewById(R.id.resultado);
+        textoResultado.setText(""+resultado);
+
     }
 
-    public double multiplicacion (int a, int b){
-        return a*b;
+    public void resta (View v){
+        int num1 = Integer.parseInt(numeroUno.getText().toString());
+        int num2 = Integer.parseInt(numeroDos.getText().toString());
+        resultado = num1-num2;
+        mostrar();
     }
 
-    public double division (int a, int b){
-        int respuesta = 0;
+    public void multiplicacion (View v){
+        int num1 = Integer.parseInt(numeroUno.getText().toString());
+        int num2 = Integer.parseInt(numeroDos.getText().toString());
+        resultado = num1*num2;
+        mostrar();
+    }
 
-        if (b!=0){
-            respuesta=a/b;
+    public void division (View v){
+        int num1 = Integer.parseInt(numeroUno.getText().toString());
+        int num2 = Integer.parseInt(numeroDos.getText().toString());
+        if (num2!=0){
+            resultado = num1/num2;
         }
-
-        return respuesta;
+        resultado = num1/num2;
+        mostrar();
     }
 }

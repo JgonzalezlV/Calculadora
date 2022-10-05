@@ -27,7 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -46,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FF0009"
+                android:onClick="suma"
                 android:text="Suma" />
 
             <Space
@@ -57,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#D6104F"
+                android:onClick="multiplicacion"
                 android:text="Multiplicacion" />
         </LinearLayout>
 
@@ -76,6 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#19FB00"
+                android:onClick="resta"
                 android:text="Resta" />
 
             <Space
@@ -87,6 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#B5C10D"
+                android:onClick="division"
                 android:text="División" />
         </LinearLayout>
     </LinearLayout>
@@ -110,11 +116,12 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
-                android:layout_width="match_parent"
+                android:id="@+id/operando1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
         </LinearLayout>
 
@@ -127,16 +134,19 @@
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
+                android:layout_gravity="center"
                 android:text="Operando2:"
                 android:textAlignment="center"
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
-                android:layout_width="match_parent"
+                android:id="@+id/operando2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="number"
+                android:textAlignment="center" />
+
         </LinearLayout>
     </LinearLayout>
 
