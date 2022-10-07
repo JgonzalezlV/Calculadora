@@ -47,22 +47,27 @@ public class MainActivity<Rounded> extends AppCompatActivity {
     private void comprobarOperaciones() {
 
         String operacion = spinner.getSelectedItem().toString();
-        if (operacion.equals("Suma")){
-            resultado = (float) (num1+num2);
-            mostrar();
-        }else if (operacion.equals("Resta")){
-            resultado = (float) (num1-num2);
-            mostrar();
-        }else if (operacion.equals("Multiplicacion")){
-            resultado = (float) (num1*num2);
-            mostrar();
-        }else if (operacion.equals("Division")) {
-            if (num2 != 0) {
-                resultado = (float) (num1 / num2);
+        switch (operacion) {
+            case "Suma":
+                resultado = (float) (num1 + num2);
                 mostrar();
-            } else { //Si el segundo número es 0 da un error, porque no se puede dividir entre cero
-                textoResultado.setText("ERROR");
-            }
+                break;
+            case "Resta":
+                resultado = (float) (num1 - num2);
+                mostrar();
+                break;
+            case "Multiplicacion":
+                resultado = (float) (num1 * num2);
+                mostrar();
+                break;
+            case "Division":
+                if (num2 != 0) {
+                    resultado = (float) (num1 / num2);
+                    mostrar();
+                } else { //Si el segundo número es 0 da un error, porque no se puede dividir entre cero
+                    textoResultado.setText("ERROR");
+                }
+                break;
         }
     }
 
@@ -119,8 +124,8 @@ public class MainActivity<Rounded> extends AppCompatActivity {
 
 
     public void cargarNumeros(){
-        num1 = Integer.parseInt(numeroUno.getText().toString());
-        num2 = Integer.parseInt(numeroDos.getText().toString());
+        num1 = Double.parseDouble(numeroUno.getText().toString());
+        num2 = Double.parseDouble(numeroDos.getText().toString());
     }//Fin cargarNumeros
 
 }//Fin MainActivity
