@@ -41,7 +41,8 @@
             android:id="@+id/spinner"
             android:layout_width="wrap_content"
             android:layout_height="82dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:entries="@array/operacion"/>
 
         <Button
             android:id="@+id/operar"

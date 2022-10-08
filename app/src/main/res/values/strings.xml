@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Calculadora</string>
+    <string name="spn_tittle">Escoja una operacion</string>
+    <string-array name="operacion">
+        <item>Seleccione una opcion</item>
+        <item>Suma</item>
+        <item>Resta</item>
+        <item>Multiplicacion</item>
+        <item>Division</item>
+    </string-array>
 </resources>
